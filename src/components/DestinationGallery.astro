@@ -1,0 +1,7 @@
+---
+import Photo from './Photo.astro';
+import {photography} from '../data/photography';
+const {slug,name}=Astro.props;
+const photo=photography[slug];
+---
+<section class="destination-gallery wrap" aria-label={`A closer look at ${name}`}><div><span class="meta">A CLOSER LOOK</span><h2>Another side<br/>of {name}.</h2><p>{photo.detailCaption}</p></div><figure><Photo src={`/images/${slug}-detail.webp`} sizes="(max-width:700px) 100vw, 65vw"/><figcaption>{photo.detailCaption}</figcaption></figure></section>

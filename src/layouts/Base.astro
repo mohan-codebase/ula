@@ -1,0 +1,67 @@
+---
+import { ClientRouter } from 'astro:transitions';
+import {site,journeys} from '../data/site';
+import {routes,experiences} from '../data/explore';
+import {deployment} from '../config/deployment';
+import '../styles/tokens.css';
+import '../styles/engine.css';
+import '../styles/site.css';
+import '../styles/sections.css';
+import '../styles/pages.css';
+import '../styles/transition.css';
+const navigation=[{label:'Destinations',href:'/destinations/',match:'/journeys/'},{label:'Experiences',href:'/experiences/'},{label:'Trips',href:'/trips/',match:'/routes/'},{label:'The journal',href:'/journal/'},{label:'About us',href:'/about-us/',match:'/about/'},{label:'Contact',href:'/contact/'}];
+const {title='Discover Tamil Nadu',description=site.description}=Astro.props;
+const fullTitle=`${title} | Ula`;
+const canonical=new URL(Astro.props.canonicalPath||Astro.url.pathname,Astro.site).href;
+---
+<!doctype html>
+<html lang="en" transition:animate="none">
+<head>
+<meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/>
+<meta name="robots" content={!deployment.indexable||Astro.url.pathname==='/404.html'?'noindex, nofollow':'index, follow'}/><title>{fullTitle}</title><meta name="description" content={description}/>
+<link rel="canonical" href={canonical}/><link rel="icon" href="/favicon.svg" type="image/svg+xml"/>
+<link rel="apple-touch-icon" href="/apple-touch-icon.png"/><meta property="og:image:width" content="1200"/><meta property="og:image:height" content="630"/><meta property="og:image:alt" content="Ula: discover Tamil Nadu, from temple streets to the Nilgiri hills"/><meta name="theme-color" content="#17211D"/><link rel="sitemap" href="/sitemap-index.xml"/>
+<meta property="og:type" content="website"/><meta property="og:title" content={fullTitle}/><meta property="og:description" content={description}/><meta property="og:url" content={canonical}/><meta property="og:image" content={new URL('/og.png',Astro.site).href}/>
+<meta name="twitter:card" content="summary_large_image"/><meta name="twitter:title" content={fullTitle}/><meta name="twitter:description" content={description}/><meta name="twitter:image" content={new URL('/og.png',Astro.site).href}/>
+<link rel="preload" href="/fonts/dm-sans-variable-9fea608a.woff2" as="font" type="font/woff2" crossorigin/>
+
+<script type="application/ld+json" set:html={JSON.stringify({'@context':'https://schema.org','@type':'WebSite',name:site.name,url:Astro.site?.href,description:site.description})}/>
+<script is:inline>document.documentElement.classList.add('js');if(!matchMedia('(prefers-reduced-motion: reduce)').matches)document.documentElement.classList.add('motion');</script>
+<ClientRouter fallback="swap"/>
+</head>
+<body>
+<noscript><link rel="stylesheet" href="/no-js.css"/><p class="no-js-message">You can browse every destination and itinerary. Interactive planning and message downloads need JavaScript.</p></noscript>
+<a class="skip-link" href="#main">Skip to content</a>
+<div id="curtain" transition:persist="curtain" aria-hidden="true" data-phase="idle"><div class="curtain__accent"></div><div class="curtain__panel"><div class="curtain__frame curtain__top"><span>VANAKKAM, TAMIL NADU.</span><span>A LITTLE FURTHER.</span></div><div class="curtain__identity"><div class="curtain__wordmark"><span class="curtain__letter">u</span><span class="curtain__letter">l</span><span class="curtain__letter">a</span></div><span class="curtain__destination" data-transition-destination>Tamil Nadu</span></div><div class="curtain__frame curtain__bottom"><span>ROOM TO WANDER.</span><span>YOUR NEXT CHAPTER</span></div></div></div>
+<div class="topline" role="region" aria-label="Travel notes"><span>VANAKKAM. WELCOME TO TAMIL NADU.</span><span>TEMPLE TOWNS. HILL TRAILS. COASTAL DAYS.</span></div>
+<header class="header">
+<a class="brand" href="/" aria-label="Ula home">ula</a>
+<nav aria-label="Main navigation" class="desktop-nav">{navigation.map(n=><a href={n.href} aria-current={Astro.url.pathname.startsWith(n.href)||(n.match&&Astro.url.pathname.startsWith(n.match))?'page':undefined}><span>{n.label}</span></a>)}</nav>
+<button class="button nav-plan" data-plan><span>Plan a trip</span></button>
+<button class="menu-toggle" aria-label="Open navigation" aria-expanded="false" aria-controls="mobile-nav"><span></span><span></span></button>
+<nav id="mobile-nav" class="mobile-nav" aria-label="Mobile navigation" hidden>{navigation.map(n=><a href={n.href} aria-current={Astro.url.pathname.startsWith(n.href)||(n.match&&Astro.url.pathname.startsWith(n.match))?'page':undefined}>{n.label}</a>)}<a href="/travel-guide/">Travel guide</a><button data-plan>Plan a trip</button></nav>
+</header>
+<main id="main" tabindex="-1"><slot/></main>
+<footer>
+<div class="footer-invite"><div><span>YOUR NEXT TAMIL NADU STORY STARTS HERE.</span><h2>Where to next?</h2></div><button class="button button-light" data-plan><span>Plan your Tamil Nadu trip</span></button></div>
+<nav class="footer-link-groups" aria-label="Explore Ula">
+<section><h3>Destinations</h3><a href="/destinations/">All destinations</a>{journeys.map(j=><a href={`/journeys/${j.slug}/`}>{j.name}</a>)}</section>
+<section><h3>Experiences</h3><a href="/experiences/">All experiences</a>{experiences.map(e=><a href={`/experiences/${e.id}/`}>{e.label}</a>)}<a href="/about-us/#culture">Food & craft</a></section>
+<section><h3>Trips</h3><a href="/trips/">All trips</a>{routes.map(r=><a href={`/trips/${r.slug}/`}>{r.name}</a>)}<a href="/travel-guide/">Travel guide</a></section>
+<section><h3>Discover Ula</h3><a href="/journal/">The journal</a><a href="/travel-guide/#when-to-go">When to visit</a><a href="/travel-guide/#travel-questions">Travel questions</a><a href="/about-us/">About us</a><a href="/contact/">Contact</a></section>
+</nav>
+<div class="footer-wordmark" aria-hidden="true">ula</div>
+<div class="footer-bottom"><p>© {new Date().getFullYear()} Ula. Vanakkam, Tamil Nadu.</p><a href="/about-us/">About us</a><a href="/contact/">Contact</a><a href="/colophon/">Photo credits</a><a href="/privacy/">Privacy</a><a href="/destinations/">Back to exploring </a></div>
+</footer>
+<dialog id="planner" aria-labelledby="planner-title" data-lenis-prevent>
+<button class="dialog-close" aria-label="Close trip planner">×</button>
+<div class="planner-form"><span class="meta">YOUR NEXT CHAPTER</span><h2 id="planner-title">A little daydream.<br/>A real starting point.</h2><p>Make a personal trip brief to save and come back to. This demo doesn't make bookings or send your details.</p>
+<form id="trip-form"><label>Where in Tamil Nadu?<select name="destination" required>{journeys.map(j=><option value={j.slug}>{j.name}</option>)}</select></label><label>A route to start with<select name="route"><option value="">Build from my destination</option>{routes.map(r=><option value={r.slug}>{r.name} · {r.days} days</option>)}</select></label><div class="form-row"><label>When would you like to go?<input type="date" name="date" required/></label><label>Who's coming?<select name="travelers"><option>Just me</option><option selected>Two travelers</option><option>Friends or family</option></select></label></div><label>Your kind of travel<select name="pace"><option>Slow mornings, room to wander</option><option>A little adventure every day</option><option>Temples, local food and heritage</option></select></label><button class="button" type="submit"><span>Create my trip brief</span></button></form></div>
+<div class="planner-result" hidden><span class="meta">SOMEWHERE TO START</span><h2>Your next chapter<br/>is taking shape.</h2><div id="trip-summary" aria-live="polite"></div><button class="button" id="download-brief"><span>Download my brief</span><span class="arrow" aria-hidden="true">↓</span></button><button class="text-link" id="edit-brief">Make a few changes</button><p class="small">Saved in this browser when storage is available. Nothing has been booked.</p></div>
+</dialog>
+<script>
+import {start} from '../engine/astro';
+import {setupMotion} from '../motion/setup';
+start(setupMotion);
+</script>
+</body></html>

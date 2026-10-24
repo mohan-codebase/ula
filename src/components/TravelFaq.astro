@@ -1,0 +1,4 @@
+---
+import {faqs} from '../data/explore';
+---
+<section class="faq-section wrap" id="travel-questions" aria-labelledby="faq-title"><div class="faq-intro"><span class="meta">BEFORE YOU SET OFF</span><h2 id="faq-title">A few things<br/>worth knowing.</h2><p>Small answers for the<br/>beginning of a good journey.</p><button class="text-link" data-plan>Make a trip brief</button></div><div class="faq-list">{faqs.map(f=><details><summary><h3>{f.question}</h3><span aria-hidden="true">+</span></summary><div class="faq-answer"><p>{f.answer}</p>{f.href&&<a href={f.href}>{f.link}</a>}</div></details>)}</div></section>

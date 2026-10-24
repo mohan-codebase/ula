@@ -1,0 +1,30 @@
+@font-face{font-family:DM;src:url('/fonts/dm-sans-variable-9fea608a.woff2') format('woff2');font-weight:100 1000;font-display:swap}
+:root {
+  /* Ula: Pearl + Botanical Ink */
+  --c-bg: #FAFAF7;
+  --c-fg: #17211D;
+  --c-muted: #656962;
+  --c-line: #D9DCD5;
+  --c-surface: #ECEDE8;
+  --c-accent: #17211D;
+  --c-accent-hover: #2E3D35;
+  --c-highlight: #C7B69A;
+  --c-ink-hover: #2E3D35;
+  --c-on-accent: #FFFFFF;
+  --c-on-dark: #FAFAF7;
+  --c-on-dark-muted: #CFD3CD;
+  --c-control-line: #858A82;
+  --c-curtain: #17211D;
+  --f-display: DM, Arial, sans-serif;
+  --f-body: DM, Arial, sans-serif;
+  --t-body: 1rem;
+  --t-s: .875rem;
+  --t-xs: .75rem;
+  --gutter: clamp(20px, 3.33vw, 64px);
+  --radius: 3px;
+  --z-curtain: 90;
+  --z-loader: 100;
+  --z-content: 1;
+  --z-header: 50;
+  --z-cursor: 80;
+}

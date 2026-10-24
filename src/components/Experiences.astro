@@ -1,0 +1,9 @@
+---
+import Photo from './Photo.astro';
+import {experiences} from '../data/explore';
+---
+<section class="experiences-section wrap" id="experiences" aria-labelledby="experiences-title">
+<div class="discovery-heading"><div><span class="meta">MORE THAN A PLACE ON THE MAP</span><h2 id="experiences-title">Find your kind of day.</h2></div><p>Follow what draws you in.<br/>Let the rest of the journey grow from there.</p></div>
+<div class="experience-tabs" role="tablist" aria-label="Choose an experience">{experiences.map((e,i)=><button id={`experience-tab-${e.id}`} role="tab" aria-selected={i===0} aria-controls={`experience-panel-${e.id}`} tabindex={i===0?0:-1} data-experience={e.id}>{e.label}</button>)}</div>
+{experiences.map((e,i)=><div class="experience-panel" id={`experience-panel-${e.id}`} role="tabpanel" aria-labelledby={`experience-tab-${e.id}`} hidden={i!==0} data-experience-panel={e.id}><figure class="experience-photo"><Photo src={e.image} sizes="(max-width:700px) 100vw, 60vw" loading="lazy"/><figcaption>{e.note}</figcaption></figure><div class="experience-copy"><span class="meta">YOUR NEXT CHAPTER</span><h3>{e.title}</h3><p>{e.description}</p><span class="experience-start">A FEW PLACES TO BEGIN</span><ul class="place-links">{e.places.map(p=><li><a href={`/journeys/${p.slug}/`}>{p.name}</a></li>)}</ul></div></div>)}
+</section>

@@ -1,0 +1,18 @@
+{
+  "passed": true,
+  "checks": [
+    "destination switch",
+    "filters",
+    "trip form validation and generation",
+    "download",
+    "storage restore",
+    "native dialog focus and Escape",
+    "destination preselection",
+    "390/768/1024/1440/1920 widths",
+    "mobile menu",
+    "page transitions",
+    "404 status",
+    "reduced motion",
+    "zero browser errors"
+  ]
+}

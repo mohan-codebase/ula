@@ -1,0 +1,110 @@
+[
+  {
+    "slug": "madurai",
+    "source": "assets/tamil-nadu/madurai-source.jpeg",
+    "width": 4368,
+    "height": 2779,
+    "license": "CC BY-SA 3.0",
+    "url": "https://commons.wikimedia.org/wiki/File:India_-_Madurai_temple_-_0781.jpg",
+    "description": "Madurai temple, India"
+  },
+  {
+    "slug": "madurai-detail",
+    "source": "assets/tamil-nadu/madurai-detail-source.jpeg",
+    "width": 4032,
+    "height": 2688,
+    "license": "CC BY 4.0",
+    "url": "https://commons.wikimedia.org/wiki/File:Meenakshi_Temple,_Pillars,_Madurai,_India.jpg",
+    "description": "Meenakshi Temple in Madurai, 6th to 14th century, a historic Hindu temple renowned for its vibrant Dravidian architecture. Meenakshi is a form of Parvati and her consort Shiva. In Shaivism, the temple is amongst the four most important of the pilgrimage sites and is as important as the city of Varanasi itself. Meenakshi Temple. Madurai, Tamil Nadu, India."
+  },
+  {
+    "slug": "ooty",
+    "source": "assets/tamil-nadu/ooty-source.jpeg",
+    "width": 8904,
+    "height": 5565,
+    "license": "CC BY-SA 4.0",
+    "url": "https://commons.wikimedia.org/wiki/File:Tea_Fields_Nilgiris_Ranges_Mynala_Dec25_A7CR_09866.jpg",
+    "description": "Tea plantations against serried ranges of the Nilgiris.  View south southeast from Mynala junction on SH-15 (Ooty-Kotagiri). Ketti valley centre right, Wellington/Coonoor centre left.  The Nilgiris, Tamil Nadu, India"
+  },
+  {
+    "slug": "ooty-detail",
+    "source": "assets/tamil-nadu/ooty-detail-source.jpeg",
+    "width": 4128,
+    "height": 3096,
+    "license": "CC BY-SA 4.0",
+    "url": "https://commons.wikimedia.org/wiki/File:Ooty_Lake_in_Tamil_Nadu_04.jpg",
+    "description": "Ooty Lake at early morning in Ooty, Tamil Nadu"
+  },
+  {
+    "slug": "mamallapuram",
+    "source": "assets/tamil-nadu/mamallapuram-source.jpeg",
+    "width": 4868,
+    "height": 2556,
+    "license": "CC BY-SA 4.0",
+    "url": "https://commons.wikimedia.org/wiki/File:Shore_Temple,_Mahabalipuram_10.jpg",
+    "description": "Shore Temple, Mahabalipuram"
+  },
+  {
+    "slug": "mamallapuram-detail",
+    "source": "assets/tamil-nadu/mamallapuram-detail-source.jpeg",
+    "width": 4032,
+    "height": 3024,
+    "license": "CC BY-SA 4.0",
+    "url": "https://commons.wikimedia.org/wiki/File:The_Shore_Temple_Mamallapuram.jpg",
+    "description": "The Shore Temple is a complex of temples and shrines that overlooks the shore of the Bay of Bengal."
+  },
+  {
+    "slug": "kanyakumari",
+    "source": "assets/tamil-nadu/kanyakumari-source.jpeg",
+    "width": 6016,
+    "height": 3741,
+    "license": "CC BY-SA 4.0",
+    "url": "https://commons.wikimedia.org/wiki/File:Vivekananda_Rock_Memorial_PSK_363.jpg",
+    "description": "This is a photo of <span lang=\"en\" dir=\"ltr\"><a href=\"https://en.wikipedia.org/wiki/Archaeological_Survey_of_India\" class=\"extiw\" title=\"en:Archaeological Survey of India\"><span lang=\"en\" dir=\"ltr\">ASI monument</span></a></span> number"
+  },
+  {
+    "slug": "kanyakumari-detail",
+    "source": "assets/tamil-nadu/kanyakumari-detail-source.jpeg",
+    "width": 4092,
+    "height": 2103,
+    "license": "CC BY-SA 4.0",
+    "url": "https://commons.wikimedia.org/wiki/File:Rock_memorial_of_Vivekananda.jpg",
+    "description": "Vivekananda Rock Memorial, Kanyakumari, last south land of India. It was built in honour of Swami Vivekananda (1863-1902), who is said to have attained enlightenment on the rock."
+  },
+  {
+    "slug": "rameswaram",
+    "source": "assets/tamil-nadu/rameswaram-source.jpeg",
+    "width": 4928,
+    "height": 3264,
+    "license": "CC BY-SA 4.0",
+    "url": "https://commons.wikimedia.org/wiki/File:Ramanathaswamy_Temple_corridor_03.jpg",
+    "description": "Ramanathaswamy Temple corridor"
+  },
+  {
+    "slug": "rameswaram-detail",
+    "source": "assets/tamil-nadu/rameswaram-detail-source.jpeg",
+    "width": 5184,
+    "height": 2985,
+    "license": "CC BY-SA 4.0",
+    "url": "https://commons.wikimedia.org/wiki/File:Dhanushkodi_beach_1.jpg",
+    "description": "Car passing through the narrow road at Dhanushkodi, Tamil Nadu, India"
+  },
+  {
+    "slug": "thanjavur",
+    "source": "assets/tamil-nadu/thanjavur-source.jpeg",
+    "width": 3840,
+    "height": 2400,
+    "license": "CC BY-SA 4.0",
+    "url": "https://commons.wikimedia.org/wiki/File:Brihadisvara_Temple_during_Maha_Shivaratri-WUS03611_(edit).jpg",
+    "description": "<a href=\"https://en.wikipedia.org/wiki/Brihadisvara_Temple\" class=\"extiw\" title=\"w:Brihadisvara Temple\">Brihadisvara Temple</a> during <a href=\"https://en.wikipedia.org/wiki/Maha_Shivaratri\" class=\"extiw\" title=\"w:Maha Shivaratri\">Maha Shivaratri</a>"
+  },
+  {
+    "slug": "thanjavur-detail",
+    "source": "assets/tamil-nadu/thanjavur-detail-source.jpeg",
+    "width": 1920,
+    "height": 1280,
+    "license": "CC BY-SA 4.0",
+    "url": "https://commons.wikimedia.org/wiki/File:An_elephant_relief_on_the_Brihadisvara_Temple,_Thanjavur.jpg",
+    "description": "An elephant relief on the Brihadisvara Temple, Thanjavur"
+  }
+]

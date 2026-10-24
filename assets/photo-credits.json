@@ -1,0 +1,6 @@
+[
+  {"file":"source/dolomites.jpg","output":"public/images/yukon.webp","author":"Kalen Emsley","location":"Kluane National Park and Reserve, Yukon, Canada","source":"https://unsplash.com/photos/Bkci_8qcdvQ","license":"Unsplash License","placeholder":true},
+  {"file":"source/iceland.jpg","output":"public/images/iceland.webp","author":"Robert Lukeman","location":"Seljalandsfoss, Iceland","source":"https://unsplash.com/photos/zNN6ubHmruI","license":"Unsplash License","placeholder":true},
+  {"file":"source/japan.jpg","output":"public/images/japan.webp","author":"Sorasak","location":"Kyoto, Japan","source":"https://unsplash.com/photos/_UIN-pFfJ7c","license":"Unsplash License","placeholder":true},
+  {"file":"source/portugal.jpg","output":"public/images/portugal.webp","author":"Nick Karvounis","location":"Porto, Portugal","source":"https://unsplash.com/photos/Prb-sjOUBFs","license":"Unsplash License","placeholder":true}
+]

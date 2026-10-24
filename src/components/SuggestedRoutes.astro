@@ -1,0 +1,5 @@
+---
+import {routes} from '../data/explore';
+const {collection=false}=Astro.props;
+---
+<section class:list={["routes-section wrap",{"collection-content":collection}]} id="routes" aria-labelledby="routes-title">{collection?<h2 class="sr-only" id="routes-title">Suggested routes</h2>:<div class="discovery-heading"><div><span class="meta">A LITTLE SHAPE. PLENTY OF ROOM.</span><h2 id="routes-title">Good journeys<br/>start somewhere.</h2></div><p>A few days, thoughtfully spent.<br/>Suggested routes to make your own.</p></div>}<div class="route-index">{routes.map(r=><a class="route-row" href={`/trips/${r.slug}/`}><div class="route-duration"><strong>{String(r.days).padStart(2,'0')}</strong><span>DAYS</span></div><div class="route-description"><span class="meta">{r.tag}</span><h3>{r.name}</h3><p>{r.route}</p></div><span class="route-open">View route</span></a>)}</div><p class="route-footnote">Independent travel ideas, not fixed departures or bookable packages.</p></section>

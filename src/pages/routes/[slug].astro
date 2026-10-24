@@ -1,0 +1,7 @@
+---
+import TripDetail from '../../components/TripDetail.astro';
+import {routes} from '../../data/explore';
+export function getStaticPaths(){return routes.map(route=>({params:{slug:route.slug},props:{route}}));}
+const {route}=Astro.props;
+---
+<TripDetail route={route}/>

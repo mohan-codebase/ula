@@ -1,0 +1,20 @@
+{
+  "passed": true,
+  "checks": [
+    "five discovery sections",
+    "experience tabs and keyboard arrows",
+    "season changes for four seasonal groups",
+    "native FAQ click and keyboard",
+    "route page rendering",
+    "route planner prefill",
+    "route-specific summary and day count",
+    "route file name and four-day download",
+    "destination/route consistency",
+    "route selector updates destination",
+    "Escape and re-open",
+    "four pages at five viewport widths",
+    "mobile route navigation anchor",
+    "reduced-motion controls",
+    "zero browser exceptions"
+  ]
+}

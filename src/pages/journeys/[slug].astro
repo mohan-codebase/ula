@@ -1,0 +1,15 @@
+---
+import DestinationGallery from '../../components/DestinationGallery.astro';
+import Photo from '../../components/Photo.astro';
+import Base from '../../layouts/Base.astro';
+import {journeys} from '../../data/site';
+export function getStaticPaths(){return journeys.map(j=>({params:{slug:j.slug},props:{journey:j}}));}
+const {journey:j}=Astro.props;
+const next=journeys[(journeys.indexOf(j)+1)%journeys.length];
+---
+<Base title={`${j.name}: ${j.label}`} description={`${j.name}, Tamil Nadu: ${j.note} Explore a suggested ${j.days}-day itinerary.`}>
+<section class="detail-heading wrap"><a class="text-link" href="/destinations/">← All destinations</a><div class="detail-title"><h1>{j.name}</h1><p>{j.label}.<br/>{j.note}</p></div><div class="detail-meta"><span>{j.category}</span><span>{j.days} days of possibility</span><span>{j.route}</span></div></section>
+<div class="detail-photo"><Photo src={j.image} sizes="100vw" loading="eager" fetchpriority="high"/><span>A TAMIL NADU FIELD NOTE</span></div>
+<section class="journey-body wrap"><div><span class="meta">THE FEELING</span><h2>{j.intro}</h2><p class="demo-note">A suggested itinerary to adapt to your own dates, budget and interests. <a class="destination-source" href={j.source} target="_blank" rel="noopener noreferrer">Official destination information</a></p><div class="itinerary"><h2>A route with room<br/>to make it yours.</h2>{j.stops.map(([title,text],i)=><section><span class="stop-index">0{i+1}</span><div><h3>{title}</h3><p>{text}</p></div></section>)}</div></div><aside class="trip-aside"><span class="meta">YOUR FIELD NOTES</span><h3>Good things<br/>to leave room for.</h3><ul><li>Time for a local breakfast and filter coffee</li><li>A slower walk through the local neighborhood</li><li>A recommendation from someone local</li><li>A flexible plan for weather and opening hours</li></ul><button class="button" data-plan data-plan-destination={j.slug}><span>Make this trip yours</span></button><p>Build a personal, downloadable trip brief. This is a demo, not a bookable tour.</p></aside></section>
+<DestinationGallery slug={j.slug} name={j.name}/><section class="next-journey wrap"><span class="meta">ANOTHER DIRECTION TO WANDER</span><a href={`/journeys/${next.slug}/`}><h2>{next.name}</h2></a></section>
+</Base>

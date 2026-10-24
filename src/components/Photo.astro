@@ -1,0 +1,12 @@
+---
+import {photography} from '../data/photography';
+const {src,alt,sizes='100vw',loading='lazy',fetchpriority='auto',class:className='',width=1600,height=1067,position,...rest}=Astro.props;
+const clean=src.replace(/-(small|large)\.(webp|avif)$/,'.webp').replace(/\.avif$/,'.webp');
+const slug=clean.split('/').pop()?.replace('.webp','')||'';
+const detail=slug.endsWith('-detail');
+const item=photography[slug.replace(/-detail$/,'')];
+const resolvedAlt=alt||(detail?item?.detailAlt:item?.alt)||'';
+const largeWidth=slug==='thanjavur-detail'?1920:2400;
+const point=position||(detail?'50% 50%':item?.position)||'50% 50%';
+---
+<picture class="responsive-photo"><source type="image/avif" srcset={`${clean.replace('.webp','-small.avif')} 800w, ${clean.replace('.webp','.avif')} 1600w, ${clean.replace('.webp','-large.avif')} ${largeWidth}w`} sizes={sizes}/><img {...rest} class={className} src={clean} srcset={`${clean.replace('.webp','-small.webp')} 800w, ${clean} 1600w, ${clean.replace('.webp','-large.webp')} ${largeWidth}w`} sizes={sizes} alt={resolvedAlt} width={width} height={height} loading={loading} fetchpriority={fetchpriority} decoding="async" style={`object-position:${point}`}/></picture>
