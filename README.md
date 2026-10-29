@@ -1,6 +1,16 @@
 # Ula
 
-A Tamil Nadu travel portfolio built with Astro, TypeScript, GSAP and Lenis. It has six destination guides, three detailed trips, experience collections, journal stories, a practical guide, About Us, Contact and photo credits. The project outputs a static site for Vercel.
+Ula is a Tamil Nadu travel showcase featuring destination guides, detailed itineraries and stories that help visitors explore the region’s heritage, landscapes and experiences. Built as a static site with Astro, TypeScript, GSAP and Lenis, it is designed for deployment on Vercel.
+
+## Features
+
+- Six destination guides, three detailed trips, experience collections, journal stories and a practical travel guide.
+- An interactive trip planner that saves choices locally and downloads a travel guide.
+- Responsive photography with image credits and licensing information.
+- Accessible browsing and itinerary reading without JavaScript, with reduced-motion support.
+- Search and social metadata, a sitemap and deployment checks for production readiness.
+
+The planner is a showcase: it does not make bookings or send traveler data. The contact form is also a demo and downloads a message rather than sending it.
 
 ## Local development
 
@@ -24,6 +34,20 @@ npm run preview -- --host 127.0.0.1 --port 4401
 The build checks origin configuration, TypeScript/Astro diagnostics, every output page's metadata and CSP, and local links/assets. GitHub Actions repeats the build and checks production dependencies. Local builds are intentionally not indexable.
 
 See [DEPLOYMENT.md](DEPLOYMENT.md) for Vercel configuration and release verification. Vercel automatically supplies the production domain when system environment variables are enabled; `SITE_URL` is an optional explicit override. Robots, canonical URLs, social metadata, structured data and sitemap use the same origin. Preview deployments are not indexable.
+
+## Project structure
+
+```text
+src/pages/        Astro pages and routes
+src/components/   Reusable site components
+src/data/         Destinations, trips, stories and photography data
+src/styles/       Site styles and design tokens
+public/           Static assets included in the deployed site
+assets/           Source assets, photography credits and font license
+design/           Design documentation
+scripts/          Deployment and build verification scripts
+.qa/              Browser, accessibility and performance checks
+```
 
 ## Editing content
 
