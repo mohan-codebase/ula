@@ -1,7 +1,11 @@
 # build output
 dist/
+out/
+.next/
 # generated types
 .astro/
+next-env.d.ts
+tsconfig.tsbuildinfo
 
 # dependencies
 node_modules/
